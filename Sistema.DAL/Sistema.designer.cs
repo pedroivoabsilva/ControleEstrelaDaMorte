@@ -30,9 +30,6 @@ namespace Sistema.DAL
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPlanetas(Planetas instance);
-    partial void UpdatePlanetas(Planetas instance);
-    partial void DeletePlanetas(Planetas instance);
     partial void InsertNaves(Naves instance);
     partial void UpdateNaves(Naves instance);
     partial void DeleteNaves(Naves instance);
@@ -42,6 +39,9 @@ namespace Sistema.DAL
     partial void InsertPilotosNaves(PilotosNaves instance);
     partial void UpdatePilotosNaves(PilotosNaves instance);
     partial void DeletePilotosNaves(PilotosNaves instance);
+    partial void InsertPlanetas(Planetas instance);
+    partial void UpdatePlanetas(Planetas instance);
+    partial void DeletePlanetas(Planetas instance);
     #endregion
 		
 		public SistemaDataContext() : 
@@ -72,14 +72,6 @@ namespace Sistema.DAL
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Planetas> Planetas
-		{
-			get
-			{
-				return this.GetTable<Planetas>();
-			}
 		}
 		
 		public System.Data.Linq.Table<HistoricoViagens> HistoricoViagens
@@ -113,239 +105,13 @@ namespace Sistema.DAL
 				return this.GetTable<PilotosNaves>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Planetas")]
-	public partial class Planetas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdPlaneta;
-		
-		private string _Nome;
-		
-		private double _Rotacao;
-		
-		private double _Orbita;
-		
-		private double _Diametro;
-		
-		private string _Clima;
-		
-		private int _Populacao;
-		
-		private EntitySet<Pilotos> _Pilotos;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdPlanetaChanging(int value);
-    partial void OnIdPlanetaChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnRotacaoChanging(double value);
-    partial void OnRotacaoChanged();
-    partial void OnOrbitaChanging(double value);
-    partial void OnOrbitaChanged();
-    partial void OnDiametroChanging(double value);
-    partial void OnDiametroChanged();
-    partial void OnClimaChanging(string value);
-    partial void OnClimaChanged();
-    partial void OnPopulacaoChanging(int value);
-    partial void OnPopulacaoChanged();
-    #endregion
-		
-		public Planetas()
-		{
-			this._Pilotos = new EntitySet<Pilotos>(new Action<Pilotos>(this.attach_Pilotos), new Action<Pilotos>(this.detach_Pilotos));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPlaneta", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int IdPlaneta
+		public System.Data.Linq.Table<Planetas> Planetas
 		{
 			get
 			{
-				return this._IdPlaneta;
+				return this.GetTable<Planetas>();
 			}
-			set
-			{
-				if ((this._IdPlaneta != value))
-				{
-					this.OnIdPlanetaChanging(value);
-					this.SendPropertyChanging();
-					this._IdPlaneta = value;
-					this.SendPropertyChanged("IdPlaneta");
-					this.OnIdPlanetaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rotacao", DbType="Float NOT NULL")]
-		public double Rotacao
-		{
-			get
-			{
-				return this._Rotacao;
-			}
-			set
-			{
-				if ((this._Rotacao != value))
-				{
-					this.OnRotacaoChanging(value);
-					this.SendPropertyChanging();
-					this._Rotacao = value;
-					this.SendPropertyChanged("Rotacao");
-					this.OnRotacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orbita", DbType="Float NOT NULL")]
-		public double Orbita
-		{
-			get
-			{
-				return this._Orbita;
-			}
-			set
-			{
-				if ((this._Orbita != value))
-				{
-					this.OnOrbitaChanging(value);
-					this.SendPropertyChanging();
-					this._Orbita = value;
-					this.SendPropertyChanged("Orbita");
-					this.OnOrbitaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diametro", DbType="Float NOT NULL")]
-		public double Diametro
-		{
-			get
-			{
-				return this._Diametro;
-			}
-			set
-			{
-				if ((this._Diametro != value))
-				{
-					this.OnDiametroChanging(value);
-					this.SendPropertyChanging();
-					this._Diametro = value;
-					this.SendPropertyChanged("Diametro");
-					this.OnDiametroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clima", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Clima
-		{
-			get
-			{
-				return this._Clima;
-			}
-			set
-			{
-				if ((this._Clima != value))
-				{
-					this.OnClimaChanging(value);
-					this.SendPropertyChanging();
-					this._Clima = value;
-					this.SendPropertyChanged("Clima");
-					this.OnClimaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Populacao", DbType="Int NOT NULL")]
-		public int Populacao
-		{
-			get
-			{
-				return this._Populacao;
-			}
-			set
-			{
-				if ((this._Populacao != value))
-				{
-					this.OnPopulacaoChanging(value);
-					this.SendPropertyChanging();
-					this._Populacao = value;
-					this.SendPropertyChanged("Populacao");
-					this.OnPopulacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Planetas_Pilotos", Storage="_Pilotos", ThisKey="IdPlaneta", OtherKey="IdPlaneta")]
-		public EntitySet<Pilotos> Pilotos
-		{
-			get
-			{
-				return this._Pilotos;
-			}
-			set
-			{
-				this._Pilotos.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Pilotos(Pilotos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Planetas = this;
-		}
-		
-		private void detach_Pilotos(Pilotos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Planetas = null;
 		}
 	}
 	
@@ -1032,6 +798,240 @@ namespace Sistema.DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Planetas")]
+	public partial class Planetas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdPlaneta;
+		
+		private string _Nome;
+		
+		private double _Rotacao;
+		
+		private double _Orbita;
+		
+		private double _Diametro;
+		
+		private string _Clima;
+		
+		private int _Populacao;
+		
+		private EntitySet<Pilotos> _Pilotos;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdPlanetaChanging(int value);
+    partial void OnIdPlanetaChanged();
+    partial void OnNomeChanging(string value);
+    partial void OnNomeChanged();
+    partial void OnRotacaoChanging(double value);
+    partial void OnRotacaoChanged();
+    partial void OnOrbitaChanging(double value);
+    partial void OnOrbitaChanged();
+    partial void OnDiametroChanging(double value);
+    partial void OnDiametroChanged();
+    partial void OnClimaChanging(string value);
+    partial void OnClimaChanged();
+    partial void OnPopulacaoChanging(int value);
+    partial void OnPopulacaoChanged();
+    #endregion
+		
+		public Planetas()
+		{
+			this._Pilotos = new EntitySet<Pilotos>(new Action<Pilotos>(this.attach_Pilotos), new Action<Pilotos>(this.detach_Pilotos));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPlaneta", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int IdPlaneta
+		{
+			get
+			{
+				return this._IdPlaneta;
+			}
+			set
+			{
+				if ((this._IdPlaneta != value))
+				{
+					this.OnIdPlanetaChanging(value);
+					this.SendPropertyChanging();
+					this._IdPlaneta = value;
+					this.SendPropertyChanged("IdPlaneta");
+					this.OnIdPlanetaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this.OnNomeChanging(value);
+					this.SendPropertyChanging();
+					this._Nome = value;
+					this.SendPropertyChanged("Nome");
+					this.OnNomeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rotacao", DbType="Float NOT NULL")]
+		public double Rotacao
+		{
+			get
+			{
+				return this._Rotacao;
+			}
+			set
+			{
+				if ((this._Rotacao != value))
+				{
+					this.OnRotacaoChanging(value);
+					this.SendPropertyChanging();
+					this._Rotacao = value;
+					this.SendPropertyChanged("Rotacao");
+					this.OnRotacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orbita", DbType="Float NOT NULL")]
+		public double Orbita
+		{
+			get
+			{
+				return this._Orbita;
+			}
+			set
+			{
+				if ((this._Orbita != value))
+				{
+					this.OnOrbitaChanging(value);
+					this.SendPropertyChanging();
+					this._Orbita = value;
+					this.SendPropertyChanged("Orbita");
+					this.OnOrbitaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diametro", DbType="Float NOT NULL")]
+		public double Diametro
+		{
+			get
+			{
+				return this._Diametro;
+			}
+			set
+			{
+				if ((this._Diametro != value))
+				{
+					this.OnDiametroChanging(value);
+					this.SendPropertyChanging();
+					this._Diametro = value;
+					this.SendPropertyChanged("Diametro");
+					this.OnDiametroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clima", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Clima
+		{
+			get
+			{
+				return this._Clima;
+			}
+			set
+			{
+				if ((this._Clima != value))
+				{
+					this.OnClimaChanging(value);
+					this.SendPropertyChanging();
+					this._Clima = value;
+					this.SendPropertyChanged("Clima");
+					this.OnClimaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Populacao", DbType="Int NOT NULL")]
+		public int Populacao
+		{
+			get
+			{
+				return this._Populacao;
+			}
+			set
+			{
+				if ((this._Populacao != value))
+				{
+					this.OnPopulacaoChanging(value);
+					this.SendPropertyChanging();
+					this._Populacao = value;
+					this.SendPropertyChanged("Populacao");
+					this.OnPopulacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Planetas_Pilotos", Storage="_Pilotos", ThisKey="IdPlaneta", OtherKey="IdPlaneta")]
+		public EntitySet<Pilotos> Pilotos
+		{
+			get
+			{
+				return this._Pilotos;
+			}
+			set
+			{
+				this._Pilotos.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Pilotos(Pilotos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Planetas = this;
+		}
+		
+		private void detach_Pilotos(Pilotos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Planetas = null;
 		}
 	}
 }

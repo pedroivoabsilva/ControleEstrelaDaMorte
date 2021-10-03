@@ -113,6 +113,7 @@ namespace EstrelaDaMorte
             this.naveToolStripMenuItem.Name = "naveToolStripMenuItem";
             this.naveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.naveToolStripMenuItem.Text = "Nave";
+            this.naveToolStripMenuItem.Click += new System.EventHandler(this.naveToolStripMenuItem_Click);
             // 
             // planetaToolStripMenuItem
             // 

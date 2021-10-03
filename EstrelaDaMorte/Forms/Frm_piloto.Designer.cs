@@ -35,31 +35,30 @@ namespace EstrelaDaMorte
             System.Windows.Forms.Label idPilotoLabel;
             System.Windows.Forms.Label idPlanetaLabel;
             this.txt_nome = new System.Windows.Forms.TextBox();
+            this.pilotosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txt_ano = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.pilotosDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pilotosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pilotosNavesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idPlanetaComboBox = new System.Windows.Forms.ComboBox();
-            this.pilotosNavesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.planetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Btn_novo = new System.Windows.Forms.Button();
+            this.Btn_cadastro = new System.Windows.Forms.Button();
+            this.Btn_cancelar = new System.Windows.Forms.Button();
+            this.pilotosNavesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idPlanetaComboBox = new System.Windows.Forms.ComboBox();
+            this.planetasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pilotosNavesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             nomeLabel = new System.Windows.Forms.Label();
             anoNascimentoLabel = new System.Windows.Forms.Label();
             idPilotoLabel = new System.Windows.Forms.Label();
             idPlanetaLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pilotosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pilotosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pilotosDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planetasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // nomeLabel
@@ -89,6 +88,15 @@ namespace EstrelaDaMorte
             idPilotoLabel.TabIndex = 7;
             idPilotoLabel.Text = "Id Piloto:";
             // 
+            // idPlanetaLabel
+            // 
+            idPlanetaLabel.AutoSize = true;
+            idPlanetaLabel.Location = new System.Drawing.Point(246, 39);
+            idPlanetaLabel.Name = "idPlanetaLabel";
+            idPlanetaLabel.Size = new System.Drawing.Size(46, 13);
+            idPlanetaLabel.TabIndex = 14;
+            idPlanetaLabel.Text = "Planeta:";
+            // 
             // txt_nome
             // 
             this.txt_nome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pilotosBindingSource, "Nome", true));
@@ -96,6 +104,10 @@ namespace EstrelaDaMorte
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(218, 20);
             this.txt_nome.TabIndex = 4;
+            // 
+            // pilotosBindingSource
+            // 
+            this.pilotosBindingSource.DataSource = typeof(Sistema.DAL.Pilotos);
             // 
             // txt_ano
             // 
@@ -133,83 +145,6 @@ namespace EstrelaDaMorte
             this.pilotosDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pilotosDataGridView_CellContentClick);
             this.pilotosDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.pilotosDataGridView_CellFormatting);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(93, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Novo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(199, 58);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Cadastrar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(304, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Excluir";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(409, 58);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // pilotosBindingSource
-            // 
-            this.pilotosBindingSource.DataSource = typeof(Sistema.DAL.Pilotos);
-            // 
-            // pilotosNavesBindingSource
-            // 
-            this.pilotosNavesBindingSource.DataMember = "PilotosNaves";
-            this.pilotosNavesBindingSource.DataSource = this.pilotosBindingSource;
-            // 
-            // idPlanetaLabel
-            // 
-            idPlanetaLabel.AutoSize = true;
-            idPlanetaLabel.Location = new System.Drawing.Point(246, 39);
-            idPlanetaLabel.Name = "idPlanetaLabel";
-            idPlanetaLabel.Size = new System.Drawing.Size(46, 13);
-            idPlanetaLabel.TabIndex = 14;
-            idPlanetaLabel.Text = "Planeta:";
-            // 
-            // idPlanetaComboBox
-            // 
-            this.idPlanetaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pilotosBindingSource, "IdPlaneta", true));
-            this.idPlanetaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pilotosBindingSource, "IdPlaneta", true));
-            this.idPlanetaComboBox.DataSource = this.planetasBindingSource;
-            this.idPlanetaComboBox.DisplayMember = "Nome";
-            this.idPlanetaComboBox.FormattingEnabled = true;
-            this.idPlanetaComboBox.Location = new System.Drawing.Point(310, 36);
-            this.idPlanetaComboBox.Name = "idPlanetaComboBox";
-            this.idPlanetaComboBox.Size = new System.Drawing.Size(198, 21);
-            this.idPlanetaComboBox.TabIndex = 15;
-            this.idPlanetaComboBox.ValueMember = "IdPlaneta";
-            // 
-            // pilotosNavesBindingSource1
-            // 
-            this.pilotosNavesBindingSource1.DataMember = "PilotosNaves";
-            this.pilotosNavesBindingSource1.DataSource = this.pilotosBindingSource;
-            // 
-            // planetasBindingSource
-            // 
-            this.planetasBindingSource.DataSource = typeof(Sistema.DAL.Planetas);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdPiloto";
@@ -242,6 +177,63 @@ namespace EstrelaDaMorte
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 130;
             // 
+            // Btn_novo
+            // 
+            this.Btn_novo.Location = new System.Drawing.Point(104, 61);
+            this.Btn_novo.Name = "Btn_novo";
+            this.Btn_novo.Size = new System.Drawing.Size(75, 23);
+            this.Btn_novo.TabIndex = 11;
+            this.Btn_novo.Text = "Novo";
+            this.Btn_novo.UseVisualStyleBackColor = true;
+            this.Btn_novo.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Btn_cadastro
+            // 
+            this.Btn_cadastro.Location = new System.Drawing.Point(210, 61);
+            this.Btn_cadastro.Name = "Btn_cadastro";
+            this.Btn_cadastro.Size = new System.Drawing.Size(75, 23);
+            this.Btn_cadastro.TabIndex = 12;
+            this.Btn_cadastro.Text = "Cadastrar";
+            this.Btn_cadastro.UseVisualStyleBackColor = true;
+            this.Btn_cadastro.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Btn_cancelar
+            // 
+            this.Btn_cancelar.Location = new System.Drawing.Point(321, 61);
+            this.Btn_cancelar.Name = "Btn_cancelar";
+            this.Btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_cancelar.TabIndex = 14;
+            this.Btn_cancelar.Text = "Cancelar";
+            this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
+            // 
+            // pilotosNavesBindingSource
+            // 
+            this.pilotosNavesBindingSource.DataMember = "PilotosNaves";
+            this.pilotosNavesBindingSource.DataSource = this.pilotosBindingSource;
+            // 
+            // idPlanetaComboBox
+            // 
+            this.idPlanetaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pilotosBindingSource, "IdPlaneta", true));
+            this.idPlanetaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.pilotosBindingSource, "IdPlaneta", true));
+            this.idPlanetaComboBox.DataSource = this.planetasBindingSource;
+            this.idPlanetaComboBox.DisplayMember = "Nome";
+            this.idPlanetaComboBox.FormattingEnabled = true;
+            this.idPlanetaComboBox.Location = new System.Drawing.Point(290, 36);
+            this.idPlanetaComboBox.Name = "idPlanetaComboBox";
+            this.idPlanetaComboBox.Size = new System.Drawing.Size(218, 21);
+            this.idPlanetaComboBox.TabIndex = 15;
+            this.idPlanetaComboBox.ValueMember = "IdPlaneta";
+            // 
+            // planetasBindingSource
+            // 
+            this.planetasBindingSource.DataSource = typeof(Sistema.DAL.Planetas);
+            // 
+            // pilotosNavesBindingSource1
+            // 
+            this.pilotosNavesBindingSource1.DataMember = "PilotosNaves";
+            this.pilotosNavesBindingSource1.DataSource = this.pilotosBindingSource;
+            // 
             // Frm_piloto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,10 +241,9 @@ namespace EstrelaDaMorte
             this.ClientSize = new System.Drawing.Size(523, 358);
             this.Controls.Add(idPlanetaLabel);
             this.Controls.Add(this.idPlanetaComboBox);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_cancelar);
+            this.Controls.Add(this.Btn_cadastro);
+            this.Controls.Add(this.Btn_novo);
             this.Controls.Add(this.pilotosDataGridView);
             this.Controls.Add(this.txt_ano);
             this.Controls.Add(this.txt_id);
@@ -263,11 +254,11 @@ namespace EstrelaDaMorte
             this.Name = "Frm_piloto";
             this.Text = "Cadastro de Pilotos";
             this.Load += new System.EventHandler(this.Frm_piloto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pilotosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pilotosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pilotosDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planetasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pilotosNavesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,10 +271,9 @@ namespace EstrelaDaMorte
         private System.Windows.Forms.TextBox txt_ano;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.DataGridView pilotosDataGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Btn_novo;
+        private System.Windows.Forms.Button Btn_cadastro;
+        private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.BindingSource pilotosNavesBindingSource;
         private System.Windows.Forms.ComboBox idPlanetaComboBox;
         private System.Windows.Forms.BindingSource planetasBindingSource;

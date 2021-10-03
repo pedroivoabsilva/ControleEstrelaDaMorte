@@ -62,5 +62,23 @@ namespace EstrelaDaMorte
             if (e.Value != null && e.ColumnIndex == 3)
                 e.Value = ((Planetas)e.Value).Nome;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (valida())
+            {
+                pilotosBindingSource.EndEdit();
+                DataContextFactory.DataContext.SubmitChanges();
+                pilotosDataGridView.Refresh();
+                MessageBox.Show("Piloto cadastrado com sucesso!");
+            }
+        }
+
+       
+
+        private void Btn_cancelar_Click(object sender, EventArgs e)
+        {
+            pilotosBindingSource.CancelEdit();
+        }
     }
 }
