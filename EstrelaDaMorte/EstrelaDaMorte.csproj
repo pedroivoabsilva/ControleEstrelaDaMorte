@@ -36,7 +36,9 @@
     <StartupObject>EstrelaDaMorte.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\Frm_autorizacaoVoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_autorizacaoVoo.Designer.cs">
+      <DependentUpon>Frm_autorizacaoVoo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_historicoViagens.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_historicoViagens.Designer.cs">
+      <DependentUpon>Frm_historicoViagens.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Nave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,8 +82,20 @@
     <Compile Include="Forms\Frm_menu.Designer.cs">
       <DependentUpon>Frm_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Frm_planeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Planeta.Designer.cs">
+      <DependentUpon>Frm_planeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Frm_autorizacaoVoo.resx">
+      <DependentUpon>Frm_autorizacaoVoo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_historicoViagens.resx">
+      <DependentUpon>Frm_historicoViagens.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Nave.resx">
       <DependentUpon>Frm_Nave.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_menu.resx">
       <DependentUpon>Frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Planeta.resx">
+      <DependentUpon>Frm_planeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -53,6 +53,7 @@ namespace EstrelaDaMorte
             this.Btn_autorizacaoVoo.TabIndex = 4;
             this.Btn_autorizacaoVoo.Text = "Autorização Vôo";
             this.Btn_autorizacaoVoo.UseVisualStyleBackColor = true;
+            this.Btn_autorizacaoVoo.Click += new System.EventHandler(this.Btn_autorizacaoVoo_Click);
             // 
             // Btn_historicoViagem
             // 
@@ -62,6 +63,7 @@ namespace EstrelaDaMorte
             this.Btn_historicoViagem.TabIndex = 5;
             this.Btn_historicoViagem.Text = "Histórico Viagens";
             this.Btn_historicoViagem.UseVisualStyleBackColor = true;
+            this.Btn_historicoViagem.Click += new System.EventHandler(this.Btn_historicoViagem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -120,6 +122,7 @@ namespace EstrelaDaMorte
             this.planetaToolStripMenuItem.Name = "planetaToolStripMenuItem";
             this.planetaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.planetaToolStripMenuItem.Text = "Planeta";
+            this.planetaToolStripMenuItem.Click += new System.EventHandler(this.planetaToolStripMenuItem_Click_1);
             // 
             // Frm_menu
             // 

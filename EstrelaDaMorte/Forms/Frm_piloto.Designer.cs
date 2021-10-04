@@ -64,7 +64,7 @@ namespace EstrelaDaMorte
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(246, 8);
+            nomeLabel.Location = new System.Drawing.Point(239, 5);
             nomeLabel.Name = "nomeLabel";
             nomeLabel.Size = new System.Drawing.Size(38, 13);
             nomeLabel.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace EstrelaDaMorte
             // idPlanetaLabel
             // 
             idPlanetaLabel.AutoSize = true;
-            idPlanetaLabel.Location = new System.Drawing.Point(246, 39);
+            idPlanetaLabel.Location = new System.Drawing.Point(239, 39);
             idPlanetaLabel.Name = "idPlanetaLabel";
             idPlanetaLabel.Size = new System.Drawing.Size(46, 13);
             idPlanetaLabel.TabIndex = 14;
@@ -137,7 +137,7 @@ namespace EstrelaDaMorte
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5});
             this.pilotosDataGridView.DataSource = this.pilotosBindingSource;
-            this.pilotosDataGridView.Location = new System.Drawing.Point(12, 92);
+            this.pilotosDataGridView.Location = new System.Drawing.Point(12, 90);
             this.pilotosDataGridView.Name = "pilotosDataGridView";
             this.pilotosDataGridView.ReadOnly = true;
             this.pilotosDataGridView.Size = new System.Drawing.Size(496, 253);
